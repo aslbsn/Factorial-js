@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayfa 1</title>
+</head>
+
+<body>
+    <h1>Please enter m and n to calculate combination</h1>
+
+    <p>C(m,n)=m!/n!(m-n)!</p>
+    <input type="number" id="x">
+    <input type="text" id="y">
+    <button type="button" id="btn" onclick="faktoriyel()">TIKLA</button>
+    <p id="result"></p>
+
+    <script>
+        function faktoriyel() {
+            var x = document.getElementById('x').value;
+            var sonuc = 1;
+
+            for (let i = x; i > 0; i--) {
+                sonuc *= i;
+            }
+
+
+
+
+            var y = document.getElementById('y').value;
+            var sonuc2 = 1;
+
+            for (let i = y; i > 0; i--) {
+                sonuc2 *= i;
+            }
+
+
+
+
+            var z = x - y;
+            var sonuc3 = 1;
+
+            for (let i = z; i > 0; i--) {
+                sonuc3 *= i;
+            }
+
+
+
+            var hesaplama = sonuc / (sonuc2 * sonuc3);
+
+            document.getElementById('result').innerHTML = "SONUÇ: " +  hesaplama;
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
