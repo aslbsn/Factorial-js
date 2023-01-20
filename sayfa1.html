@@ -14,45 +14,36 @@
     <p>C(m,n)=m!/n!(m-n)!</p>
     <input type="number" id="x">
     <input type="text" id="y">
-    <button type="button" id="btn" onclick="faktoriyel()">TIKLA</button>
+    <button type="button" id="btn" onclick="hesapla()">TIKLA</button>
     <p id="result"></p>
 
     <script>
-        function faktoriyel() {
-            var x = document.getElementById('x').value;
-            var sonuc = 1;
+        function fakt(a) {
 
-            for (let i = x; i > 0; i--) {
-                sonuc *= i;
-            }
+var a_fak=1;
 
+for(var i=1; i<=a; i++)
+{
+    a_fak=a_fak*i;
+}
+return a_fak;
 
-
-
-            var y = document.getElementById('y').value;
-            var sonuc2 = 1;
-
-            for (let i = y; i > 0; i--) {
-                sonuc2 *= i;
-            }
-
-
-
-
-            var z = x - y;
-            var sonuc3 = 1;
-
-            for (let i = z; i > 0; i--) {
-                sonuc3 *= i;
-            }
-
-
-
-            var hesaplama = sonuc / (sonuc2 * sonuc3);
-
-            document.getElementById('result').innerHTML = "SONUÇ: " +  hesaplama;
         }
 
+        function hesapla() {
+
+
+            var x = document.getElementById('x').value;
+            var y = document.getElementById('y').value;
+
+            var x_fak=fakt(x);
+            var y_fak=fakt(y);
+            var xy_fak=fakt(x-y);
+
+            var sonuc=x_fak/(y_fak*xy_fak);
+            document.getElementById('result').innerHTML = "SONUÇ: " +  sonuc;
+
+        }
 
 
 
